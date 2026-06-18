@@ -1,0 +1,21 @@
+{
+  "overall_accuracy": 0.7269743193666731,
+  "macro_f1": 0.5201845858010157,
+  "weighted_f1": 0.712504459512417,
+  "melanoma_roc_auc": 0.8444504123587364,
+  "melanoma_operating_point": {
+    "threshold": 0.05,
+    "tp": 640,
+    "fp": 757,
+    "fn": 292,
+    "tn": 3490,
+    "recall": 0.6866952789699571,
+    "precision": 0.4581245526127416,
+    "specificity": 0.8217565340240169,
+    "risk": 3677,
+    "C_FP": 1,
+    "C_FN": 10
+  },
+  "n_val": 5179,
+  "n_melanoma_val": 932
+}

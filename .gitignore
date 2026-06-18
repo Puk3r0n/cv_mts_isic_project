@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+*.log
+
+# Веса модели — большие бинарники, не храним в git (прогон на Kaggle, см. README).
+runs/*.pth
+runs/*.pt
+
+# Сырые предсказания eval — генерируются при прогоне.
+reports/val_probs.npz
+reports/val_index.csv
+
+# Demo-изображения не нужны в репозитории; реальный датасет берётся на Kaggle
+# (andrewmvd/isic-2019). Отчётные таблицы и графики в reports/ — отслеживаются.
+data/images/*.jpg
+data/images/*.jpeg
+data/images/*.png
+!data/images/.gitkeep

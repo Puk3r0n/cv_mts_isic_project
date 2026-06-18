@@ -1,0 +1,49 @@
+seed: 42
+name:
+
+paths:
+  data_dir: data
+  images_dir: images
+  ground_truth: ground_truth.csv
+  runs_dir: runs
+  reports_dir: reports
+  checkpoint: baseline_resnet18.pth
+
+classes: [MEL, NV, BCC, AK, BKL, DF, VASC, SCC]
+
+split:
+  group_by: lesion_id
+  val_size: 0.2
+  random_state: 42
+
+model:
+  backbone: resnet18
+  pretrained: true
+  image_size: 224
+
+train:
+  epochs: 5
+  batch_size: 32
+  lr: 1.0e-4
+  optimizer: adam
+  weight_decay: 0.0
+  num_workers: 4
+
+eval:
+  batch_size: 64
+  num_workers: 4
+
+decision:
+  positive_class: MEL
+  malignant_classes: [MEL, BCC, SCC]
+  threshold_step: 0.05
+  cost_fp: 1
+  cost_fn: 10
+  default_threshold: 0.5
+
+stress:
+  subset:
+  seed: 42
+
+calibration:
+  n_bins: 10
